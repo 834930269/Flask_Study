@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}修改个人档案{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>编辑个人档案</h1>
+</div>
+<div class="col-md-4">
+    {{ wtf.quick_form(form) }}
+	{% for i in [0,0,0] %}
+	<br/>
+	{% endfor %}
+</div>
+
+{% endblock %}
