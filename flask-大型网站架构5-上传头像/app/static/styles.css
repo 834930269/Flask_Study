@@ -1,0 +1,27 @@
+.profile-thumbnail {
+    position: absolute;
+}
+.profile-header {
+    min-height: 260px;
+    margin-left: 280px;
+}
+.change{
+    opacity: 0;
+}
+.upload{
+    padding: 5px 10px;
+    height: 40px;
+    line-height: 30px;
+    position: relative;
+    border: 1px solid #999;
+    text-decoration: none;
+	text-align:center;
+    color: #fff;
+}
+.change{
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}

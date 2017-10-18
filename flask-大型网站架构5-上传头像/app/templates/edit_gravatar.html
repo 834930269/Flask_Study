@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}编辑个人头像{% endblock %}
+{% block page_content %}
+<form method="POST" enctype="multipart/form-data">
+     {{ form.hidden_tag() }}
+	 <div class="page-header"><h2>展览板~</h2></div>
+	 <a class="btn btn-success upload" placeholder="上传头像" ><p id="show_gt">选择您要上传的头像~</p>
+		{{ form.photo(class="change",placeholder="上传头像",onchange="c()") }}
+	 </a><br/>
+     {% for error in form.photo.errors %}
+         <span style="color: red;">{{ error }}</span>
+     {% endfor %}
+	 {% if file_url %}
+	 <br><img src="{{ file_url }}" width="256" height="256">
+	 {% endif %}
+	 <a class="btn btn-success"><-之前 之后-></a>
+	 <img src="{{ file_url }}" id='show' width="256" height="256"><br/><br/>
+     {{ form.submit }}
+</form>
+<script type="text/javascript">
+	function c () {
+		var gt=document.getElementById('show_gt');
+		gt.innerText = '已选中图片~'
+		var r= new FileReader();
+		f=document.getElementById('photo').files[0];
+		r.readAsDataURL(f);
+		r.onload=function  (e) {
+			document.getElementById('show').src=this.result;
+		};
+	}
+</script>
+{% endblock %}
