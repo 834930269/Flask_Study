@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}编辑头像{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>给自己选一个更适合的头像吧</h1>
+</div>
+<div class="col-md-4">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="file"><br/>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+
+{% endblock %}
